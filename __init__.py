@@ -29,10 +29,9 @@ import json
 """
 module = GetParams("module")
 
+try:
+    if module == "deleteArray":
 
-if module == "deleteArray":
-
-    try:
         array_ = GetParams('array_')
         print('ARRAY: ',array_)
         option_ = GetParams('option_')
@@ -59,13 +58,10 @@ if module == "deleteArray":
                 array_.remove(value_)
 
         SetVar(var_, array_)
-    except Exception as e:
-        PrintException()
-        raise e
 
-if module == "addArray":
 
-    try:
+    if module == "addArray":
+
         array_ = GetParams('array_')
         position_ = GetParams('position_')
         value_ = GetParams('value_')
@@ -106,9 +102,43 @@ if module == "addArray":
             else:
                 array_.append(value_)
 
-
         SetVar(var_, array_)
-    except Exception as e:
-        PrintException()
-        raise  e
+
+    if module == "filter":
+        array_ = GetParams('array_')
+        data = GetParams('data')
+        condition = GetParams('condition')
+        result = GetParams('var_')
+
+        if array_:
+            array_ = eval(array_)
+
+        filtered_list = []
+        if not data.isnumeric():
+            data = f"'{data}'"
+
+        for element in array_:
+            if not element.isnumeric():
+                element_parsed = f"'{element}'"
+            string = f"{element_parsed} {condition} {data}"
+            print(string)
+            if eval(string):
+                filtered_list.append(element)
+
+        if result:
+            SetVar(result, filtered_list)
+
+    if module == "length":
+        array_ = GetParams('array_')
+        result = GetParams('var_')
+
+        if array_:
+            array_ = eval(array_)
+
+        if result:
+            SetVar(result, len(array_))
+
+except Exception as e:
+    PrintException()
+    raise e
 
