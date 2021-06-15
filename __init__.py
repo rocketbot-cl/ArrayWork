@@ -30,6 +30,37 @@ import json
 module = GetParams("module")
 
 try:
+
+    if module == "searchInArray":
+
+        varSearchValue = GetParams("varSearchValue")
+        varArrayToSearch = GetParams("varArrayToSearch")
+        varSelectedForResult = GetParams("varSelectedForResult")
+        # print("aca")
+        # print(varArrayToSearch)
+        # print("deberia")
+        # print(eval(varArrayToSearch))
+        # print("estar")
+        varArrayToSearch = eval(varArrayToSearch)
+
+        findedIn = []
+        positionX = 1
+        positionY = 1
+        for cada in varArrayToSearch:
+            for uno in cada:
+                print(uno)
+                if (uno == varSearchValue):
+                    print("Lo hemos encontrado :)")
+                    finalPosition = f'({positionX},{positionY})'
+                    print(finalPosition)
+                    findedIn.append(finalPosition)
+                positionX = positionX + 1
+            positionY = positionY + 1
+            positionX = 1
+        print(findedIn)
+
+        SetVar(varSelectedForResult, findedIn)
+
     if module == "deleteArray":
 
         array_ = GetParams('array_')
