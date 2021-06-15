@@ -73,7 +73,16 @@ try:
         if not value_:
             raise Exception("value empty")
 
-        if "," in value_:
+        array_ = str(array_)
+        array_ = eval(array_)
+
+        if "[" in value_ and "]" in value_:
+            if not position_:
+                value_ = str(value_)
+                new_element = eval(value_)
+                array_.append(new_element)
+
+        elif "," in value_:
             if not position_:
                 v = value_.split(',')
                 print(v)
