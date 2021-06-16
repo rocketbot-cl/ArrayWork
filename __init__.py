@@ -51,7 +51,7 @@ try:
                 print(uno)
                 if (uno == varSearchValue):
                     print("Lo hemos encontrado :)")
-                    finalPosition = f'({positionX},{positionY})'
+                    finalPosition = (positionX,positionY)
                     print(finalPosition)
                     findedIn.append(finalPosition)
                 positionX = positionX + 1
@@ -98,52 +98,27 @@ try:
         value_ = GetParams('value_')
         var_ = GetParams('var_')
         num = GetParams('num')
-        array_ = eval(array_)
-        print(array_,position_,value_,num)
 
         if not value_:
             raise Exception("value empty")
 
-        array_ = str(array_)
+        if not array_:
+            raise Exception("Array field is empty")
+
         array_ = eval(array_)
+        try:
+            value_ = eval(value_)
+        except NameError:
+            pass
 
-        if "[" in value_ and "]" in value_:
-            if not position_:
-                value_ = str(value_)
-                new_element = eval(value_)
-                array_.append(new_element)
+        if not position_:
+            position_ = len(array_)
+        position_ = int(position_)
 
-        elif "," in value_:
-            if not position_:
-                v = value_.split(',')
-                print(v)
-                for a in v:
-                    if num == True:
-                        array_.append(int(a))
-                        print('fin',array_)
-                    else:
-                        array_.append(a)
-
-        if position_:
-            if "," not in value_:
-                b = array_[:]
-                if num == True:
-                    b.insert(int(position_), int(value_))
-                    array_ = b
-                else:
-                    b.insert(int(position_), value_)
-                    array_ = b
-            else:
-                raise Exception('Just one value')
-
-        if not position_ and "," not in value_:
-            if num == True:
-                array_.append(int(value_))
-            else:
-                array_.append(value_)
-
+        array_.insert(position_, value_)
         SetVar(var_, array_)
 
+        
     if module == "filter":
         array_ = GetParams('array_')
         data = GetParams('data')
