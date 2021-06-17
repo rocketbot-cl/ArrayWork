@@ -65,7 +65,7 @@
                     "en": "Result"
                   },
                 "title": {
-                    "es": "Nombre de la varible donde la posicion",
+                    "es": "Nombre de la varible donde almacenar la posicion",
                     "en": "Variable where save position:  "
                 },
                 "id": "varSelectedForResult",
