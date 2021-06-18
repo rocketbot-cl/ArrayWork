@@ -23,12 +23,11 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
     pip install <package> -t .
 
 """
-import json
 """
     Obtengo el modulo que fue invocado
 """
 module = GetParams("module")
-
+print(module)
 try:
 
     if module == "searchInArray":
@@ -98,7 +97,7 @@ try:
         value_ = GetParams('value_')
         var_ = GetParams('var_')
         num = GetParams('num')
-
+        print("working")
         if not value_:
             raise Exception("value empty")
 
@@ -107,15 +106,19 @@ try:
 
         array_ = eval(array_)
         try:
+            print(value_)
             value_ = eval(value_)
         except NameError:
             pass
 
         if not position_:
+            print(position_)
             position_ = len(array_)
         position_ = int(position_)
 
+        print("insert")
         array_.insert(position_, value_)
+        print("setvar")
         SetVar(var_, array_)
 
         
