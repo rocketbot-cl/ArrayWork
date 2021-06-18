@@ -35,30 +35,21 @@ try:
         varSearchValue = GetParams("varSearchValue")
         varArrayToSearch = GetParams("varArrayToSearch")
         varSelectedForResult = GetParams("varSelectedForResult")
-        # print("aca")
-        # print(varArrayToSearch)
-        # print("deberia")
-        # print(eval(varArrayToSearch))
-        # print("estar")
         varArrayToSearch = eval(varArrayToSearch)
 
-        findedIn = []
+        valuesFound = []
         positionX = 1
         positionY = 1
-        for cada in varArrayToSearch:
-            for uno in cada:
-                print(uno)
-                if (uno == varSearchValue):
-                    print("Lo hemos encontrado :)")
+        for rowsX in varArrayToSearch:
+            for columnsY in rowsX:
+                if (columnsY == varSearchValue):
                     finalPosition = (positionX,positionY)
-                    print(finalPosition)
-                    findedIn.append(finalPosition)
+                    valuesFound.append(finalPosition)
                 positionX = positionX + 1
             positionY = positionY + 1
             positionX = 1
-        print(findedIn)
 
-        SetVar(varSelectedForResult, findedIn)
+        SetVar(varSelectedForResult, valuesFound)
 
     if module == "deleteArray":
 
