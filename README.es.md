@@ -1,6 +1,6 @@
 # ArrayWork
   
-Agrega y elimina datos en un array
+Modulo para trabajar con arrays y tablas  
 
 *Read this in other languages: [English](README.md), [Español](README.es.md).*
 
@@ -14,7 +14,7 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Ro
 
 
 1. Buscar elemento en una tabla  
-Obtiene la posicion de un elemento en una tabla.
+Obtiene la posicion de un elemento en una tabla. Debe ser un Array de arrays
 
 2. Eliminar dato en array  
 Elimina un dato en array por valor o posición

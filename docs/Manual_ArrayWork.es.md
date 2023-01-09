@@ -1,10 +1,10 @@
 # ArrayWork
   
-Agrega y elimina datos en un array  
+Modulo para trabajar con arrays y tablas  
 
 *Read this in other languages: [English](Manual_ArrayWork.md), [Español](Manual_ArrayWork.es.md).*
   
-![banner](imgs/Banner_arraywork.png)
+![banner](imgs/Banner_ArrayWork.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
@@ -15,12 +15,12 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Ro
 
 ### Buscar elemento en una tabla
   
-Obtiene la posicion de un elemento en una tabla.
+Obtiene la posicion de un elemento en una tabla. Debe ser un Array de arrays
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Valor a buscar|Valor a buscar en la tabla|Valor a buscar|
-|Donde buscar|Donde buscar el valor|{array}|
-|Nombre de la variable donde almacenar la posicion|Nombre de la variable donde se almacenara la posicion del elemento|Resultado|
+|Donde buscar|Donde buscar el valor|[[1,2,3],[4,5,6],[7,8,9]]|
+|Nombre de la variable donde almacenar la posicion|Nombre de la variable donde se almacenaran las posiciones del elemento|Resultado|
 
 ### Eliminar dato en array
   
