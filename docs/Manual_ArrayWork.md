@@ -1,6 +1,6 @@
 # ArrayWork
   
-Modulo para trabajar con arrays y tablas  
+Module for work with arrays and tables  
 
 *Read this in other languages: [English](Manual_ArrayWork.md), [Español](Manual_ArrayWork.es.md).*
   
