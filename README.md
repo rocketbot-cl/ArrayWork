@@ -1,6 +1,6 @@
 # ArrayWork
   
-Adds and removes data in an array  
+Module for work with arrays and tables  
 
 *Read this in other languages: [English](README.md), [Español](README.es.md).*
 
@@ -14,7 +14,7 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 
 
 1. Find element position in table  
-Find the position of the element in a table.
+Find the position of the element in a table. It must be an Array of arrays
 
 2. Delete data in array  
 Delete data in array by value or position

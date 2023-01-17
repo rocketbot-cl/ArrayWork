@@ -1,10 +1,10 @@
 {
-  "author": "Marcela Vergara",
-  "description": "Agrega y elimina datos en un array",
+  "author": "Marcela Vergara - Nicolas Garcia",
+  "description": "Modulo para trabajar con arrays y tablas",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "2.2.0",
+  "version": "3.1.0",
   "license": "MIT",
-  "homepage": "http://rocketbot.co/",
+  "homepage": "http://rocketbot.com/",
   "linux": true,
   "windows": true,
   "mac": true,
@@ -21,13 +21,13 @@
     {
       "en": {
         "title": "Find element position in table",
-        "description": "Find the position of the element in a table.",
+        "description": "Find the position of the element in a table. It must be an Array of arrays",
         "title_options": "Select Option",
         "options": null
       },
       "es": {
         "title": "Buscar elemento en una tabla",
-        "description": "Obtiene la posicion de un elemento en una tabla.",
+        "description": "Obtiene la posicion de un elemento en una tabla. Debe ser un Array de arrays",
         "title_options": "Seleccione una opción",
         "options": null
       },
@@ -42,7 +42,7 @@
                   },
                 "title": {
                     "es": "Valor a buscar",
-                    "en": "Value to search:  "
+                    "en": "Value to search"
                 },
                 "description": {
                     "es": "Valor a buscar en la tabla",
@@ -54,9 +54,9 @@
             {
                 "type": "input",
                 "placeholder": {
-                    "es": "{array}",
-                    "en": "{array}"
-                  },
+                    "es": "[[1,2,3],[4,5,6],[7,8,9]]",
+                    "en": "[[1,2,3],[4,5,6],[7,8,9]]"
+                },
                 "title": {
                     "es": "Donde buscar:",
                     "en": "Where to search:"
@@ -64,6 +64,10 @@
                 "description": {
                     "es": "Donde buscar el valor",
                     "en": "Where to search the value"
+                },
+                "help": {
+                    "es": "Debe ser un array de arrays",
+                    "en": "Must be an array of arrays"
                 },
                 "id": "varArrayToSearch",
                 "css": "col-md-6"
@@ -79,9 +83,10 @@
                     "en": "Name of the variable where to store the position"
                 },
                 "description": {
-                    "es": "Nombre de la variable donde se almacenara la posicion del elemento",
-                    "en": "Name of the variable where to store the position of the element"
+                    "es": "Nombre de la variable donde se almacenaran las posiciones del elemento",
+                    "en": "Name of the variable where to store the positions of the element"
                 },
+                "remove_vars": true,
                 "id": "varSelectedForResult",
                 "css": "col-md-6"
             }
@@ -204,6 +209,7 @@
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-6"
           }
@@ -332,6 +338,7 @@
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-6"
           }
@@ -461,6 +468,7 @@
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-12"
           }
@@ -530,6 +538,7 @@
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-12"
           }

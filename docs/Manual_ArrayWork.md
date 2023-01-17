@@ -1,10 +1,10 @@
 # ArrayWork
   
-Adds and removes data in an array  
+Module for work with arrays and tables  
 
 *Read this in other languages: [English](Manual_ArrayWork.md), [Español](Manual_ArrayWork.es.md).*
   
-![banner](imgs/Banner_arraywork.png)
+![banner](imgs/Banner_ArrayWork.png)
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
@@ -15,12 +15,12 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 
 ### Find element position in table
   
-Find the position of the element in a table.
+Find the position of the element in a table. It must be an Array of arrays
 |Parameters|Description|example|
 | --- | --- | --- |
-|Value to search  |Value to search in the table|Value to search|
-|Where to search|Where to search the value|{array}|
-|Name of the variable where to store the position|Name of the variable where to store the position of the element|Result|
+|Value to search|Value to search in the table|Value to search|
+|Where to search|Where to search the value|[[1,2,3],[4,5,6],[7,8,9]]|
+|Name of the variable where to store the position|Name of the variable where to store the positions of the element|Result|
 
 ### Delete data in array
   
