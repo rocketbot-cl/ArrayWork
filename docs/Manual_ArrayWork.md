@@ -60,3 +60,4 @@ Return a number of array elements
 | --- | --- | --- |
 |Array|Array to count|{array}|
 |Assign result to variable |Variable where the result will be stored|test|
+
