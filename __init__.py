@@ -23,11 +23,97 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
     pip install <package> -t .
 
 """
+
 """
     Obtengo el modulo que fue invocado
 """
+
 module = GetParams("module")
-print(module)
+
+
+'''
+Funciones del módulo
+'''
+def search(element, table):
+    valuesFound = []
+    positionX = 1
+    positionY = 1
+    for rowsX in element:
+        for columnsY in rowsX:
+            if columnsY == table:
+                finalPosition = (positionX,positionY)
+                valuesFound.append(finalPosition)
+            positionX = positionX + 1
+        positionY = positionY + 1
+        positionX = 1
+    return valuesFound
+
+def delete(array_, option_, value_):
+    if not option_ and not value_:
+        raise Exception("option or value empty")
+
+    if "," in value_:
+        if option_ == "position_":
+            raise Exception('Just one value')
+
+        if option_ == "value_":
+            v = value_.split(',')
+            for a in v:
+                array_.remove(a)
+    else:
+        if option_ == "position_":
+            array_.pop(int(value_))
+
+        if option_ == "value_":
+            array_.remove(value_)
+    return array_
+
+def add(array_, position_, value_):
+    if not value_:
+        raise Exception("value empty")
+
+    if not array_:
+        raise Exception("Array field is empty")
+
+    array_ = eval(array_)
+    try:
+        print(value_)
+        value_ = eval(value_)
+    except NameError:
+        pass
+
+    if not position_:
+        print(position_)
+        position_ = len(array_)
+        
+    position_ = int(position_)
+    array_.insert(position_, value_)
+    
+    return array_
+
+def filter(array_, data, condition):
+    if array_:
+        array_ = eval(array_)
+
+    filtered_list = []
+    
+
+    for element in array_:
+        type_ = type(element)
+        if type_ == str:
+            data_f = f"'{data}'"
+            element_parsed = f"'{element}'"
+        else:
+            data_f = f"{data}"
+            element_parsed = f"{element}"
+        string = f"{element_parsed} {condition} {data_f}"
+        print(string, eval(string))
+        if eval(string):
+            filtered_list.append(element)
+            
+    return filtered_list
+
+
 try:
 
     if module == "searchInArray":
@@ -37,17 +123,7 @@ try:
         varSelectedForResult = GetParams("varSelectedForResult")
         varArrayToSearch = eval(varArrayToSearch)
 
-        valuesFound = []
-        positionX = 1
-        positionY = 1
-        for rowsX in varArrayToSearch:
-            for columnsY in rowsX:
-                if (columnsY == varSearchValue):
-                    finalPosition = (positionX,positionY)
-                    valuesFound.append(finalPosition)
-                positionX = positionX + 1
-            positionY = positionY + 1
-            positionX = 1
+        valuesFound = search(varArrayToSearch, varSearchValue)
 
         SetVar(varSelectedForResult, valuesFound)
 
@@ -60,25 +136,9 @@ try:
         var_ = GetParams('var_')
         array_ = eval(array_)
 
-        if not option_ and not value_:
-            raise Exception("option or value empty")
+        array_delete = delete(array_, option_, value_)
 
-        if "," in value_:
-            if option_ == "position_":
-                raise Exception('Just one value')
-
-            if option_ == "value_":
-                v = value_.split(',')
-                for a in v:
-                    array_.remove(a)
-        else:
-            if option_ == "position_":
-                array_.pop(int(value_))
-
-            if option_ == "value_":
-                array_.remove(value_)
-
-        SetVar(var_, array_)
+        SetVar(var_, array_delete)
 
 
     if module == "addArray":
@@ -88,29 +148,10 @@ try:
         value_ = GetParams('value_')
         var_ = GetParams('var_')
         num = GetParams('num')
-        print("working")
-        if not value_:
-            raise Exception("value empty")
 
-        if not array_:
-            raise Exception("Array field is empty")
+        array_add = add(array_, position_, value_, num)
 
-        array_ = eval(array_)
-        try:
-            print(value_)
-            value_ = eval(value_)
-        except NameError:
-            pass
-
-        if not position_:
-            print(position_)
-            position_ = len(array_)
-        position_ = int(position_)
-
-        print("insert")
-        array_.insert(position_, value_)
-        print("setvar")
-        SetVar(var_, array_)
+        SetVar(var_, array_add)
 
         
     if module == "filter":
@@ -119,23 +160,10 @@ try:
         condition = GetParams('condition')
         result = GetParams('var_')
 
-        if array_:
-            array_ = eval(array_)
-
-        filtered_list = []
-        if not data.isnumeric():
-            data = f"'{data}'"
-
-        for element in array_:
-            if not element.isnumeric():
-                element_parsed = f"'{element}'"
-            string = f"{element_parsed} {condition} {data}"
-            print(string)
-            if eval(string):
-                filtered_list.append(element)
+        array_filtered = filter(array_, data, condition)
 
         if result:
-            SetVar(result, filtered_list)
+            SetVar(result, array_filtered)
 
     if module == "length":
         array_ = GetParams('array_')

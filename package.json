@@ -1,10 +1,10 @@
 {
-  "author": "Marcela Vergara",
-  "description": "Agrega y elimina datos en un array",
+  "author": "Marcela Vergara - Nicolas Garcia",
+  "description": "Modulo para trabajar con arrays y tablas",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "2.1",
+  "version": "3.1.0",
   "license": "MIT",
-  "homepage": "http://rocketbot.co/",
+  "homepage": "http://rocketbot.com/",
   "linux": true,
   "windows": true,
   "mac": true,
@@ -19,16 +19,18 @@
   "icon": "data:image/png;base64,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",
   "children": [
     {
-        "title": {
-          "en": "Find element position in table",
-          "es": "Buscar elemento en una tabla",
-          "pr": ""
-        },
-        "description": {
-          "en": "Find the position of the element in a table.",
-          "es": "Obtiene la posicion de un elemento en una tabla.",
-          "pr": ""
-        },
+      "en": {
+        "title": "Find element position in table",
+        "description": "Find the position of the element in a table. It must be an Array of arrays",
+        "title_options": "Select Option",
+        "options": null
+      },
+      "es": {
+        "title": "Buscar elemento en una tabla",
+        "description": "Obtiene la posicion de un elemento en una tabla. Debe ser un Array de arrays",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
         "form": {
           "css": "modal-lg",
           "inputs": [
@@ -40,7 +42,11 @@
                   },
                 "title": {
                     "es": "Valor a buscar",
-                    "en": "Value to search:  "
+                    "en": "Value to search"
+                },
+                "description": {
+                    "es": "Valor a buscar en la tabla",
+                    "en": "Value to search in the table"
                 },
                 "id": "varSearchValue",
                 "css": "col-md-6"
@@ -48,12 +54,20 @@
             {
                 "type": "input",
                 "placeholder": {
-                    "es": "{array}",
-                    "en": "{array}"
-                  },
+                    "es": "[[1,2,3],[4,5,6],[7,8,9]]",
+                    "en": "[[1,2,3],[4,5,6],[7,8,9]]"
+                },
                 "title": {
-                    "es": "Donde buscar",
-                    "en": "Where to search:  "
+                    "es": "Donde buscar:",
+                    "en": "Where to search:"
+                },
+                "description": {
+                    "es": "Donde buscar el valor",
+                    "en": "Where to search the value"
+                },
+                "help": {
+                    "es": "Debe ser un array de arrays",
+                    "en": "Must be an array of arrays"
                 },
                 "id": "varArrayToSearch",
                 "css": "col-md-6"
@@ -65,9 +79,14 @@
                     "en": "Result"
                   },
                 "title": {
-                    "es": "Nombre de la varible donde almacenar la posicion",
-                    "en": "Variable where save position:  "
+                    "es": "Nombre de la variable donde almacenar la posicion",
+                    "en": "Name of the variable where to store the position"
                 },
+                "description": {
+                    "es": "Nombre de la variable donde se almacenaran las posiciones del elemento",
+                    "en": "Name of the variable where to store the positions of the element"
+                },
+                "remove_vars": true,
                 "id": "varSelectedForResult",
                 "css": "col-md-6"
             }
@@ -105,19 +124,34 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "{array}",
+            "placeholder": {
+              "en": "{array}",
+              "es": "{array}"
+            },
             "title": {
               "es": "Array:",
               "en": "Array:"
+            },
+            "description": {
+              "es": "Array donde se eliminará el dato",
+              "en": "Array where the data will be deleted"
             },
             "id": "array_",
             "css": "col-md-6"
           },
           {
             "type": "select",
+            "placeholder": {
+              "en": "By Position",
+              "es": "By Position"
+            },
             "title": {
               "es": "Opción",
               "en": "Option"
+            },
+            "description": {
+              "es": "Opción para eliminar dato",
+              "en": "Option to delete data"
             },
             "options": [
               {
@@ -146,6 +180,10 @@
               "es": "Valor o Posición a eliminar: ",
               "en": "Value or Position to delete: "
             },
+            "description": {
+              "es": "Valor o posición a eliminar del array",
+              "en": "Value or position to delete from the array"
+            },
             "help": {
               "es": "Para varios valores, separar por coma (Sólo si no se indica posición)",
               "en": "For several values, separate by comma (only if a position is not indicated)"
@@ -163,10 +201,15 @@
               "es": "Asignar resultado a variable: ",
               "en": "Assign result to variable: "
             },
+            "description": {
+              "es": "Variable donde se almacenará el resultado",
+              "en": "Variable where the result will be stored"
+            },
             "help": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-6"
           }
@@ -203,19 +246,34 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "{array}",
+            "placeholder": {
+              "en": "{array}",
+              "es": "{array}"
+            },
             "title": {
               "es": "Array:",
               "en": "Array:"
+            },
+            "description": {
+              "es": "Array donde se agregará el dato",
+              "en": "Array where the data will be added"
             },
             "id": "array_",
             "css": "col-md-6"
           },
           {
             "type": "input",
+            "placeholder": {
+              "en": "{posicion}",
+              "es": "{position}"
+            },
             "title": {
               "es": "Posición",
               "en": "Position"
+            },
+            "description": {
+              "es": "Posición donde se agregará el dato",
+              "en": "Position where the data will be added"
             },
             "help": {
               "es": "Si se deja vacío por defecto se agregará al final",
@@ -234,6 +292,10 @@
               "es": "Valor a agregar: ",
               "en": "Value to add: "
             },
+            "description": {
+              "es": "Valor a agregar en el array",
+              "en": "Value to add in the array"
+            },
             "help": {
               "es": "Para varios valores, separar por coma (Sólo si no se indica posición)",
               "en": "For several values, separate by comma (only if a position is not indicated)"
@@ -251,23 +313,32 @@
               "es": "Agregar como número",
               "en": "Add like number"
             },
+            "description": {
+              "es": "Agregar el valor como número",
+              "en": "Add the value as a number"
+            },
             "id": "num",
             "css": "col-md-6"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "test",
-              "en": "test"
+              "es": "variable",
+              "en": "variable"
             },
             "title": {
-              "es": "Asignar resultado a variable: ",
-              "en": "Assign result to variable: "
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable"
+            },
+            "description": {
+              "es": "Asigna el resultado de la ejecución a una variable",
+              "en": "Assign the result of the execution to a variable"
             },
             "help": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-6"
           }
@@ -304,19 +375,34 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "{array}",
+            "placeholder": {
+              "en": "{array}",
+              "es": "{array}"
+            },
             "title": {
               "es": "Array:",
               "en": "Array:"
+            },
+            "description": {
+              "es": "Array a filtrar",
+              "en": "Array to filter"
             },
             "id": "array_",
             "css": "col-md-12"
           },
           {
             "type": "select",
+            "placeholder": {
+              "en": "Equal to",
+              "es": "Equal to"
+            },
             "title": {
               "es": "Condición",
               "en": "Condition"
+            },
+            "description": {
+              "es": "Condición a evaluar",
+              "en": "Condition to evaluate"
             },
             "options": [
               {
@@ -357,6 +443,10 @@
               "es": "Dato a comparar",
               "en": "Data to compare  "
             },
+            "description": {
+              "es": "Dato a comparar",
+              "en": "Data to compare"
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -370,10 +460,15 @@
               "es": "Asignar resultado a variable: ",
               "en": "Assign result to variable: "
             },
+            "description": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable"
+            },
             "help": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-12"
           }
@@ -410,10 +505,17 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "{array}",
+            "placeholder": {
+              "en": "{array}",
+              "es": "{array}"
+            },
             "title": {
               "es": "Array:",
               "en": "Array:"
+            },
+            "description": {
+              "es": "Array a contar",
+              "en": "Array to count"
             },
             "id": "array_",
             "css": "col-md-12"
@@ -428,10 +530,15 @@
               "es": "Asignar resultado a variable: ",
               "en": "Assign result to variable: "
             },
+            "description": {
+              "es": "Variable donde se almacenará el resultado",
+              "en": "Variable where the result will be stored"
+            },
             "help": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-12"
           }

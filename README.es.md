@@ -1,32 +1,32 @@
 # ArrayWork
   
-Module for work with arrays and tables  
+Modulo para trabajar con arrays y tablas  
 
 *Read this in other languages: [English](README.md), [Español](README.es.md).*
 
-## How to install this module
+## Como instalar este módulo
   
-__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
+__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
 
 
 
 ## Overview
 
 
-1. Find element position in table  
-Find the position of the element in a table. It must be an Array of arrays
+1. Buscar elemento en una tabla  
+Obtiene la posicion de un elemento en una tabla. Debe ser un Array de arrays
 
-2. Delete data in array  
-Delete data in array by value or position
+2. Eliminar dato en array  
+Elimina un dato en array por valor o posición
 
-3. Add data in array  
-Add an array data, you can indicate position if it is a single value
+3. Agregar dato en array  
+Agregar un dato en array, se puede indicar posición si es un sólo valor
 
-4. Filter  
-Return a filtered array
+4. Filtrar  
+Retorna un array filtrado
 
-5. Count elements  
-Return a number of array elements  
+5. Contar elementos  
+Retorna el número de elementos en el array  
 
 
 
