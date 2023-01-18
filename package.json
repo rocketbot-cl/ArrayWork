@@ -358,16 +358,16 @@
       "docker": true
     },
     {
-      "en": {
-        "title": "Filter",
-        "description": "Return a filtered array",
-        "title_options": "Select Option",
-        "options": null
-      },
       "es": {
         "title": "Filtrar",
-        "description": "Retorna un array filtrado",
+        "description": "Compara un array con un dato y retorna un array con los elementos que cumplan la condición.",
         "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "en": {
+        "title": "Filter",
+        "description": "Compares an array with a data and returns an array with the elements that meet the condition.",
+        "title_options": "Select Option",
         "options": null
       },
       "form": {
@@ -440,8 +440,8 @@
               "en": "{data}"
             },
             "title": {
-              "es": "Dato a comparar",
-              "en": "Data to compare  "
+              "es": "Dato",
+              "en": "Data"
             },
             "description": {
               "es": "Dato a comparar",

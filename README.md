@@ -23,7 +23,7 @@ Delete data in array by value or position
 Add an array data, you can indicate position if it is a single value
 
 4. Filter  
-Return a filtered array
+Compares an array with a data and returns an array with the elements that meet the condition.
 
 5. Count elements  
 Return a number of array elements  
