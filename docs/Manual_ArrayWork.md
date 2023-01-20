@@ -45,12 +45,12 @@ Add an array data, you can indicate position if it is a single value
 
 ### Filter
   
-Return a filtered array
+Compares an array with a data and returns an array with the elements that meet the condition.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Array|Array to filter|{array}|
 |Condition|Condition to evaluate|Equal to|
-|Data to compare  |Data to compare|{data}|
+|Data|Data to compare|{data}|
 |Assign result to variable |Assign result to variable|test|
 
 ### Count elements

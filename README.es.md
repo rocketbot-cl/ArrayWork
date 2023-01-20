@@ -23,7 +23,7 @@ Elimina un dato en array por valor o posición
 Agregar un dato en array, se puede indicar posición si es un sólo valor
 
 4. Filtrar  
-Retorna un array filtrado
+Compara un array con un dato y retorna un array con los elementos que cumplan la condición.
 
 5. Contar elementos  
 Retorna el número de elementos en el array  

@@ -45,12 +45,12 @@ Agregar un dato en array, se puede indicar posición si es un sólo valor
 
 ### Filtrar
   
-Retorna un array filtrado
+Compara un array con un dato y retorna un array con los elementos que cumplan la condición.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Array|Array a filtrar|{array}|
 |Condición|Condición a evaluar|Equal to|
-|Dato a comparar|Dato a comparar|{data}|
+|Dato|Dato a comparar|{data}|
 |Asignar resultado a variable |Asignar resultado a variable|test|
 
 ### Contar elementos
