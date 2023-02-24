@@ -36,16 +36,16 @@ Funciones del módulo
 '''
 def search(element, table):
     valuesFound = []
-    positionX = 1
-    positionY = 1
+    positionX = 0
+    positionY = 0
     for rowsX in element:
+        positionX += 1
         for columnsY in rowsX:
-            if columnsY == table:
-                finalPosition = (positionX,positionY)
+            positionY += 1
+            if str(columnsY) == str(table):
+                finalPosition = (positionX, positionY)
                 valuesFound.append(finalPosition)
-            positionX = positionX + 1
-        positionY = positionY + 1
-        positionX = 1
+        positionY = 0
     return valuesFound
 
 def delete(array_, option_, value_):
