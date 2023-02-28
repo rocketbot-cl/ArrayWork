@@ -2,7 +2,7 @@
   "author": "Marcela Vergara - Nicolas Garcia",
   "description": "Modulo para trabajar con arrays y tablas",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "3.1.0",
+  "version": "3.1.2",
   "license": "MIT",
   "homepage": "http://rocketbot.com/",
   "linux": true,
@@ -358,16 +358,16 @@
       "docker": true
     },
     {
-      "en": {
-        "title": "Filter",
-        "description": "Return a filtered array",
-        "title_options": "Select Option",
-        "options": null
-      },
       "es": {
         "title": "Filtrar",
-        "description": "Retorna un array filtrado",
+        "description": "Compara un array con un dato y retorna un array con los elementos que cumplan la condición.",
         "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "en": {
+        "title": "Filter",
+        "description": "Compares an array with a data and returns an array with the elements that meet the condition.",
+        "title_options": "Select Option",
         "options": null
       },
       "form": {
@@ -440,8 +440,8 @@
               "en": "{data}"
             },
             "title": {
-              "es": "Dato a comparar",
-              "en": "Data to compare  "
+              "es": "Dato",
+              "en": "Data"
             },
             "description": {
               "es": "Dato a comparar",
