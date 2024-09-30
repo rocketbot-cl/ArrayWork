@@ -68,7 +68,7 @@ def delete(array_, option_, value_):
             array_.remove(value_)
     return array_
 
-def add(array_, position_, value_):
+def add(array_, position_, value_, num):
     if not value_:
         raise Exception("value empty")
 
@@ -76,18 +76,36 @@ def add(array_, position_, value_):
         raise Exception("Array field is empty")
 
     array_ = eval(array_)
+
+    value_list = value_.split(',')
+
     try:
         print(value_)
         value_ = eval(value_)
     except NameError:
         pass
+    
+    for i in range(len(value_list)):
+        value_list[i] = value_list[i].strip()
+
+        if num.lower() == 'true':  
+            try:
+                if '.' in value_list[i]:
+                    value_list[i] = float(value_list[i])
+                else:
+                    value_list[i] = int(value_list[i])
+            except ValueError:
+                pass
 
     if not position_:
         print(position_)
         position_ = len(array_)
         
     position_ = int(position_)
-    array_.insert(position_, value_)
+    for value in value_list:
+        array_.insert(position_, value)
+        position_ += 1
+    
     
     return array_
 
@@ -147,7 +165,7 @@ try:
         position_ = GetParams('position_')
         value_ = GetParams('value_')
         var_ = GetParams('var_')
-        num = GetParams('num')
+        num = GetParams('num') if GetParams('num') else 'false'
 
         array_add = add(array_, position_, value_, num)
 
